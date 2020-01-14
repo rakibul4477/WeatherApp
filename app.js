@@ -1,12 +1,23 @@
+let lalitude;
+let longitude;
+const notification = document.getElementsByClassName("notification")[0];
+
+
 function getLocation() {
     if(navigator.geolocation)
-    vavigator.geolocation.getCurrentPosition(showposition,showError);
+    navigator.geolocation.getCurrentPosition(onSuccess,showError);
 }
 
-function showposition(position) {
+function onSuccess(position) {
     console.log(position)
 }
 function showError(error) {
-    console.log(error)
+    console.log('upppoooss',error)
+    const p = document.createElement('p')
+    p.innerHTML = error.message
+
+    notification.style.display = "block";
+
+    notification.appendChild(p);
 }
 getLocation();
