@@ -1,1 +1,12 @@
-// api key : 82005d27a116c2880c8f0fcb866998a0
+function getLocation() {
+    if(navigator.geolocation)
+    vavigator.geolocation.getCurrentPosition(showposition,showError);
+}
+
+function showposition(position) {
+    console.log(position)
+}
+function showError(error) {
+    console.log(error)
+}
+getLocation();
